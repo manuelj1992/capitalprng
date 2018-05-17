@@ -14,9 +14,22 @@ import {RouterModule, Routes} from '@angular/router';
 import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
 import {MenubarModule} from 'primeng/menubar';
 import {PanelMenuModule} from 'primeng/panelmenu';
+import {DashboardHomeComponent} from './dashboard-home/dashboard-home.component';
+import {DashboardHelpComponent} from './dashboard-help/dashboard-help.component';
+import {DashboardUploadComponent} from './dashboard-upload/dashboard-upload.component';
+import {FileUploadModule} from 'primeng/fileupload';
 const appRoutes: Routes = [
   {path: 'login', component: LoginComponent},
-  {path: 'dashboard', component: DashboardComponent},
+  {
+    path: 'dashboard',
+    component: DashboardComponent,
+    children: [
+      {path: '', redirectTo: 'home', pathMatch: 'full'},
+      {path: 'home', component: DashboardHomeComponent},
+      {path: 'help', component: DashboardHelpComponent},
+      {path: 'upload', component: DashboardUploadComponent}
+    ]
+  },
   {
     path: '',
     redirectTo: '/login',
@@ -30,7 +43,10 @@ const appRoutes: Routes = [
     AppComponent,
     LoginComponent,
     DashboardComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    DashboardHomeComponent,
+    DashboardHelpComponent,
+    DashboardUploadComponent
   ],
   imports: [
     BrowserModule,
@@ -41,6 +57,7 @@ const appRoutes: Routes = [
     MenubarModule,
     BrowserAnimationsModule,
     PanelMenuModule,
+    FileUploadModule,
     RouterModule.forRoot(
       appRoutes,
       {enableTracing: true} // <-- debugging purposes only
