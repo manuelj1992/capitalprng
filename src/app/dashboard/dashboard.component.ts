@@ -15,152 +15,51 @@ export class DashboardComponent implements OnInit {
 
 
   ngOnInit() {
-    this.items = [
-      {
-        label: 'File',
-        icon: 'fa-file-o',
-        items: [{
-          label: 'New',
-          icon: 'fa-plus',
-          items: [
-            {label: 'Project'},
-            {label: 'Other'},
-          ]
-        },
-          {label: 'Open'},
-          {separator: true},
-          {label: 'Quit'}
-        ]
-      },
-      {
-        label: 'Edit',
-        icon: 'fa-edit',
-        items: [
-          {label: 'Undo', icon: 'fa-mail-forward'},
-          {label: 'Redo', icon: 'fa-mail-reply'}
-        ]
-      },
-      {
-        label: 'Help',
-        icon: 'fa-question',
-        items: [
-          {
-            label: 'Contents'
-          },
-          {
-            label: 'Search',
-            icon: 'fa-search',
-            items: [
-              {
-                label: 'Text',
-                items: [
-                  {
-                    label: 'Workspace'
-                  }
-                ]
-              },
-              {
-                label: 'File'
-              }
-            ]
-          }
-        ]
-      },
-      {
-        label: 'Actions',
-        icon: 'fa-gear',
-        items: [
-          {
-            label: 'Edit',
-            icon: 'fa-refresh',
-            items: [
-              {label: 'Save', icon: 'fa-save'},
-              {label: 'Update', icon: 'fa-save'},
-            ]
-          },
-          {
-            label: 'Other',
-            icon: 'fa-phone',
-            items: [
-              {label: 'Delete', icon: 'fa-minus'}
-            ]
-          }
-        ]
-      },
-      {
-        label: 'Quit', icon: 'fa-minus'
-      }
-    ];
-
     this.items_left = [
       {
-        label: 'File',
-        icon: 'fa-file-o',
-        items: [{
-          label: 'New',
-          icon: 'fa-plus',
-          items: [
-            {label: 'Project'},
-            {label: 'Other'},
-          ]
-        },
-          {label: 'Open'},
-          {label: 'Quit'}
-        ]
+        label: 'Home',
+        icon: 'fa-home',
+
       },
       {
-        label: 'Edit',
-        icon: 'fa-edit',
-        items: [
-          {label: 'Undo', icon: 'fa-mail-forward'},
-          {label: 'Redo', icon: 'fa-mail-reply'}
-        ]
+        label: 'Portafolios',
+        icon: 'fa-globe',
+        routerLink: '/dashboard/portfolios'
       },
       {
-        label: 'Help',
-        icon: 'fa-question',
+        label: 'Matrices',
+        icon: 'fa-th',
         items: [
           {
-            label: 'Contents'
+            label: 'Análisis',
+            routerLink: '/dashboard/matrix/analysis'
           },
           {
-            label: 'Search',
-            icon: 'fa-search',
-            items: [
-              {
-                label: 'Text',
-                items: [
-                  {
-                    label: 'Workspace'
-                  }
-                ]
-              },
-              {
-                label: 'File'
-              }
-            ]
+            label: 'Probabilidades de incumplimiento',
+            routerLink: '/dashboard/matrix/probabilities'
           }
         ]
       },
       {
-        label: 'Actions',
-        icon: 'fa-gear',
+        label: 'Requerimientos',
+        icon: 'fa-mobile',
+        routerLink: '/dashboard/requirements',
         items: [
           {
-            label: 'Edit',
-            icon: 'fa-refresh',
-            items: [
-              {label: 'Save', icon: 'fa-save'},
-              {label: 'Update', icon: 'fa-save'},
-            ]
+            label: 'Distribución de pérdida',
+            routerLink: '/dashboard/requirements/loss-distribution',
           },
+        ]
+      },
+      {
+        label: 'Correlaciones',
+        icon: 'fa-paperclip',
+        routerLink: '/dashboard/correlations',
+        items: [
           {
-            label: 'Other',
-            icon: 'fa-phone',
-            items: [
-              {label: 'Delete', icon: 'fa-minus'}
-            ]
-          }
+            label: 'Análisis',
+            routerLink: '/dashboard/correlations/analysis',
+          },
         ]
       }
     ];
